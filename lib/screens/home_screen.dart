@@ -1,19 +1,50 @@
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  final String title;
+class HomeScreen extends StatefulWidget {
+const HomeScreen({super.key});
 
-  const HomeScreen({super.key, required this.title});
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+  
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+
+    final List<Map<String, String>> tasks = [
+    {
+      'title': 'Project Setup with Git & GitHub',
+      'description': 'Create a new Flutter project named task_notes_manager.',
+    },
+    {
+      'title': 'Building the User Interface with Forms & Dynamic Lists',
+      'description': 'Create two main screens using Navigator.',
+    },
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        title: const Text('Task Notes Manager'),
+        backgroundColor: Colors.blueAccent,
+        
       ),
-      body: Center(
-        child: Text('Welcome to Task Notes Manager!'),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16.0),
+            child: const Text(
+              'Welcome to Task Notes Manager!',
+              style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ],
       ),
     );
   }
 }
+
+
