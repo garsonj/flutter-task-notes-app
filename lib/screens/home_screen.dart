@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:task_notes_manager/screens/screen2_screen.dart';
+
 
 class HomeScreen extends StatefulWidget {
 const HomeScreen({super.key});
@@ -76,7 +78,16 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      
+      floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Screen2()),
+            );
+          },
+          backgroundColor: Colors.blue,
+          child: const Icon(Icons.add, color: Colors.white),
+        ),
     );
   }
 }
