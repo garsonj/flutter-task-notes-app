@@ -38,7 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
             width: double.infinity,
             padding: const EdgeInsets.all(16.0),
             child: const Text(
-              'Welcome to Task Notes Manager!',
+              'My Tasks and Notes.',
               style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
