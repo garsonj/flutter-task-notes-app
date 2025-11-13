@@ -46,4 +46,12 @@ class DatabaseHelper {
       )
     ''');
   }
+
+  Future<int> insertTask(TaskItem task) async {
+    final db = await instance.database;
+    final id = await db.insert(_tableName, task.toJson());
+    return id;
+  }
+
+  
 }
