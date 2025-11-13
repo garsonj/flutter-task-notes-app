@@ -53,5 +53,20 @@ class DatabaseHelper {
     return id;
   }
 
-  
+  Future<List<TaskItem>> getAllTasks() async {
+    final db = await instance.database;
+    final maps = await db.query(_tableName, orderBy: 'id DESC');
+    return maps.map((m) => TaskItem.fromJson(m)).toList();
+  }
+
+  Future<int> updateTask(TaskItem task) async {
+    final db = await instance.database;
+    return await db.update(
+      _tableName,
+      task.toJson(),
+      where: 'id = ?',
+      whereArgs: [task.id],
+    );
+  }
+
 }
