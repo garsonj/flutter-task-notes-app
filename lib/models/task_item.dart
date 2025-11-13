@@ -1,4 +1,3 @@
-// filepath: c:\Users\JOHN\Desktop\task_notes_manager\lib\models\task_item.dart
 class TaskItem {
   int? id;
   String title;
