@@ -1,16 +1,55 @@
-# task_notes_manager
+# Task Notes Manager
 
-A new Flutter project.
+## Student Info
+- Name: Garanga John
+- Student Number: 2300722975
+- Registration No.: 23/X/22975/PS
 
-## Getting Started
+## Description
+Simple Flutter app to create, edit, delete, and list task/note items.  
+Features:
+- Add / edit / delete tasks (title, description, priority, completion status)
+- Persistent storage using SQLite (sqflite + sqflite_common_ffi for desktop)
+- Theme toggle (light/dark) persisted with SharedPreferences
+- Desktop (Windows) initialization handled for sqflite FFI
 
-This project is a starting point for a Flutter application.
+## Tech Stack
+- Flutter
+- sqflite + sqflite_common_ffi
+- shared_preferences
+- path_provider
 
-A few resources to get you started if this is your first Flutter project:
+## Running the Project
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/garsonj/flutter-task-notes-app.git
+   cd flutter-task-notes-app
+   ```
+2. Fetch dependencies:
+   ```sh
+   flutter pub get
+   ```
+3. (Optional) Clean build artifacts:
+   ```sh
+   flutter clean
+   flutter pub get
+   ```
+4. Run (Windows example):
+   ```sh
+   flutter run -d windows
+   ```
+5. For mobile:
+   ```sh
+   flutter run
+   ```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Project Structure (key files)
+- lib/main.dart (theme + app bootstrap)
+- lib/models/task_item.dart (data model + JSON)
+- lib/data/database_helper.dart (SQLite helper)
+- lib/screens/home_screen.dart (list + theme switch)
+- lib/screens/screen2_screen.dart (add/edit form)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Notes
+- On desktop, sqflite FFI is initialized in main.dart.
+- Use small, descriptive Git commits (e.g., "add model", "add db helper", "implement edit/delete").
